@@ -203,7 +203,7 @@ export default function Home() {
             <a className="nav-link" href="#sobre-mi">Sobre mí</a>
             <a className="nav-link" href="#experiencia">Experiencia</a>
             <a
-              className="hidden rounded-full border border-white/10 px-4 py-2 text-zinc-200 transition hover:border-teal-300/30 hover:bg-teal-300/5 hover:text-teal-100 sm:inline-flex"
+              className="inline-flex items-center rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-200 transition hover:border-teal-300/30 hover:bg-teal-300/5 hover:text-teal-100 sm:px-4 sm:py-2 sm:text-sm"
               href="#contacto"
             >
               Contactar
