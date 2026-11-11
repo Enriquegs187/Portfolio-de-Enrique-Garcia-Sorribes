@@ -109,19 +109,21 @@ function SectionHeading({
   eyebrow,
   title,
   description,
+  className = "mb-10",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
+  className?: string;
 }) {
   return (
-    <div className="mb-10 max-w-2xl">
-      <p className="section-eyebrow">{eyebrow}</p>
+    <div className={`${className} max-w-2xl`}>
+      <p className="section-eyebrow text-justify">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-zinc-50 sm:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-7 text-zinc-400">{description}</p>
+        <p className="mt-4 text-justify text-base leading-7 text-zinc-400">{description}</p>
       ) : null}
     </div>
   );
@@ -178,7 +180,7 @@ function ProficiencyRing({
         </div>
       </div>
       <h3 className="text-sm font-medium text-zinc-100">{name}</h3>
-      <p className="mt-1.5 text-xs leading-5 text-zinc-500">{note}</p>
+      <p className="mt-1.5 text-justify text-xs leading-5 text-zinc-500">{note}</p>
     </article>
   );
 }
@@ -188,7 +190,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#090a0c] text-zinc-100">
       <div className="page-glow pointer-events-none fixed inset-0 -z-0" aria-hidden="true" />
       <div className="relative z-10">
-        <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+        <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 sm:px-6 md:px-12">
           <a href="#inicio" className="flex items-center gap-3" aria-label="Enrique García Sorribes, inicio">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-xs font-semibold tracking-wide text-teal-200">
               EG
@@ -209,8 +211,8 @@ export default function Home() {
           </nav>
         </header>
 
-        <section id="inicio" className="mx-auto grid w-full max-w-6xl scroll-mt-12 items-center gap-12 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20 lg:px-10 lg:pb-32">
-          <div className="order-2 animate-rise-in lg:order-1">
+        <section id="inicio" className="mx-auto grid w-full max-w-7xl scroll-mt-12 items-center gap-10 px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 md:grid-cols-[1.2fr_0.8fr] md:gap-8 md:px-12 lg:gap-16 lg:pb-32">
+          <div className="order-1 animate-rise-in">
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-teal-300/15 bg-teal-300/[0.06] px-3 py-1.5 text-xs font-medium text-teal-100">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-300 opacity-30" />
@@ -218,10 +220,10 @@ export default function Home() {
               </span>
               Disponible para prácticas de fin de grado
             </div>
-            <p className="mb-4 text-sm font-medium tracking-wide text-zinc-400">
+            <p className="mb-4 text-justify text-sm font-medium tracking-wide text-zinc-400">
               Estudiante en 4º de Ingeniería Informática
             </p>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.065em] text-white sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.065em] text-white md:text-5xl lg:text-[4.5rem]">
               Enrique García Sorribes
             </h1>
             <div className="mt-6 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
@@ -229,7 +231,7 @@ export default function Home() {
               <span className="text-zinc-700">/</span>
               <span className="rounded-md border border-white/10 bg-white/[0.035] px-2.5 py-1">.NET · Web</span>
             </div>
-            <p className="mt-7 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
+            <p className="mt-7 max-w-xl text-justify text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
               Me interesa el desarrollo de software y la resolución de problemas reales. Busco prácticas para aplicar mi formación, aprender de un equipo y seguir ganando experiencia.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -265,7 +267,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+          <div className="order-2 flex justify-center md:justify-end">
             <div className="profile-frame animate-float relative">
               <div className="absolute -inset-8 rounded-full bg-teal-400/[0.06] blur-3xl" />
               <div className="relative rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.015] p-3 shadow-2xl shadow-black/50">
@@ -276,7 +278,7 @@ export default function Home() {
                     height={460}
                     priority
                     alt="Enrique García Sorribes"
-                    className="h-[300px] w-[250px] object-cover object-center transition duration-500 hover:scale-[1.04] sm:h-[360px] sm:w-[300px]"
+                    className="h-[264px] w-[220px] object-cover object-center transition duration-500 hover:scale-[1.04] md:h-[340px] md:w-[280px] lg:h-[360px] lg:w-[300px]"
                   />
                 </div>
                 <div className="absolute -bottom-5 -left-6 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#111316]/95 px-4 py-3 shadow-xl backdrop-blur">
@@ -297,25 +299,58 @@ export default function Home() {
         </section>
 
         <div className="border-y border-white/[0.06] bg-white/[0.015]">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-white/[0.07] px-5 sm:px-8 lg:grid-cols-4 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 px-4 sm:px-6 md:grid-cols-4 md:px-12">
             {[
               ["4", "curso de Ingeniería Informática"],
               ["2", "proyectos en entorno industrial"],
               ["8", "tecnologías con práctica"],
               ["∞", "ganas de seguir aprendiendo"],
-            ].map(([value, label]) => (
-              <div key={label} className="px-4 py-5 first:pl-0 sm:px-7 sm:py-6 lg:first:pl-0">
-                <p className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">{value}</p>
-                <p className="mt-1 text-[10px] leading-4 text-zinc-500 sm:text-xs">{label}</p>
+            ].map(([value, label], index) => (
+              <div
+                key={label}
+                className={`min-h-[120px] px-4 py-5 sm:px-6 sm:py-6 ${
+                  index < 2 ? "border-b border-white/[0.07] md:border-b-0" : ""
+                } ${
+                  index % 2 === 1 ? "border-l border-white/[0.07]" : ""
+                } ${index > 0 ? "md:border-l md:border-white/[0.07]" : ""}`}
+              >
+                <p className="text-justify text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">{value}</p>
+                <p className="text-justify text-[10px] leading-4 text-zinc-500 sm:text-xs">{label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <section id="sobre-mi" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
-              <SectionHeading eyebrow="Sobre mí" title="Tecnología, equipo y constancia." />
+        <section id="sobre-mi" className="mx-auto max-w-7xl scroll-mt-16 px-4 py-20 sm:px-6 sm:py-28 md:px-12">
+          <div className="grid gap-y-4 lg:grid-cols-[0.8fr_1.2fr] lg:grid-rows-[auto_1fr] lg:gap-x-20 lg:gap-y-0">
+            <div className="lg:col-start-1 lg:row-start-1">
+              <SectionHeading
+                eyebrow="Sobre mí"
+                title="Tecnología, equipo y constancia."
+                className="mb-0"
+              />
+            </div>
+            <div className="pt-1 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+              <p className="text-justify text-lg leading-8 text-zinc-300">
+                Soy estudiante de último curso de Ingeniería Informática, a punto de graduarme, con una buena base académica y experiencia práctica en Torrecid. Allí he podido aplicar lo aprendido en proyectos de software para un entorno industrial. Me gusta entender los problemas y seguir aprendiendo mientras construyo soluciones útiles.
+              </p>
+              <p className="mt-5 text-justify leading-7 text-zinc-400">
+                Soy extrovertido y disfruto trabajando en equipo, comunicándome con claridad y aprendiendo de quienes me rodean. Fuera del código, el gimnasio y el enduro/descenso en BTT me enseñan disciplina, foco y a superarme con cabeza ante cada reto.
+              </p>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
+                  <Sparkles className="mb-3 h-4 w-4 text-teal-200" />
+                  <p className="text-justify text-sm font-medium text-zinc-200">Comunicación y equipo</p>
+                  <p className="mt-1.5 text-justify text-xs leading-5 text-zinc-500">Colaboración cercana, actitud abierta y objetivos compartidos.</p>
+                </div>
+                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
+                  <Bike className="mb-3 h-4 w-4 text-teal-200" />
+                  <p className="text-justify text-sm font-medium text-zinc-200">Disciplina y resiliencia</p>
+                  <p className="mt-1.5 text-justify text-xs leading-5 text-zinc-500">Constancia para afrontar retos y mejorar un poco cada día.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 lg:col-start-1 lg:row-start-2 lg:mt-0">
               <div className="flex items-center gap-2 text-sm text-zinc-500">
                 <MapPin className="h-4 w-4 text-teal-200/80" /> Benicasim, España
               </div>
@@ -328,31 +363,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="pt-1">
-              <p className="text-lg leading-8 text-zinc-300">
-                Soy estudiante de último curso de Ingeniería Informática, a punto de graduarme, con una buena base académica y experiencia práctica en Torrecid. Allí he podido aplicar lo aprendido en proyectos de software para un entorno industrial. Me gusta entender los problemas y seguir aprendiendo mientras construyo soluciones útiles.
-              </p>
-              <p className="mt-5 leading-7 text-zinc-400">
-                Soy extrovertido y disfruto trabajando en equipo, comunicándome con claridad y aprendiendo de quienes me rodean. Fuera del código, el gimnasio y el enduro/descenso en BTT me enseñan disciplina, foco y a superarme con cabeza ante cada reto.
-              </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
-                  <Sparkles className="mb-3 h-4 w-4 text-teal-200" />
-                  <p className="text-sm font-medium text-zinc-200">Comunicación y equipo</p>
-                  <p className="mt-1.5 text-xs leading-5 text-zinc-500">Colaboración cercana, actitud abierta y objetivos compartidos.</p>
-                </div>
-                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
-                  <Bike className="mb-3 h-4 w-4 text-teal-200" />
-                  <p className="text-sm font-medium text-zinc-200">Disciplina y resiliencia</p>
-                  <p className="mt-1.5 text-xs leading-5 text-zinc-500">Constancia para afrontar retos y mejorar un poco cada día.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
         <section id="tecnologias" className="border-y border-white/[0.06] bg-white/[0.015]">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 md:px-12">
             <SectionHeading
               eyebrow="Habilidades"
               title="Herramientas para construir."
@@ -381,7 +396,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="dominio" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <section id="dominio" className="mx-auto max-w-7xl scroll-mt-16 px-4 py-20 sm:px-6 sm:py-28 md:px-12">
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <SectionHeading
               eyebrow="Nivel de experiencia"
@@ -401,32 +416,32 @@ export default function Home() {
         </section>
 
         <section id="experiencia" className="border-y border-white/[0.06] bg-white/[0.015]">
-          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 md:px-12">
             <SectionHeading
               eyebrow="Proyectos"
               title="Software conectado con el mundo real."
               description="Proyectos académicos y experiencia en Torrecid, aplicando desarrollo de software en contextos diversos."
             />
-            <div className="mx-auto grid max-w-4xl gap-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {projects.map((project) => {
                 const Icon = project.icon;
                 return (
-                  <article key={project.number} className={`project-card accent-${project.accent}`}>
+                  <article key={project.number} className={`project-card flex h-full flex-col accent-${project.accent}`}>
                     <div className="flex items-start justify-between">
                       <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-teal-100">
                         <Icon className="h-5 w-5" />
                       </span>
                       <span className="font-mono text-xs text-zinc-600">{project.number}</span>
                     </div>
-                    <p className="mt-7 text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-500">{project.type}</p>
+                    <p className="mt-7 text-justify text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-500">{project.type}</p>
                     <h3 className="mt-3 text-xl font-medium leading-7 tracking-tight text-zinc-100">{project.title}</h3>
-                    <p className="mt-3 min-h-[84px] text-sm leading-6 text-zinc-400">{project.description}</p>
+                    <p className="mt-3 min-h-[84px] text-justify text-sm leading-6 text-zinc-400">{project.description}</p>
                     <div className="mt-6 flex flex-wrap gap-2">
                       {project.stack.map((item) => (
                         <span key={item} className="tech-chip">{item}</span>
                       ))}
                     </div>
-                    <div className="mt-7 flex items-center gap-2 border-t border-white/[0.07] pt-4 text-xs text-zinc-500">
+                    <div className="mt-auto flex items-center gap-2 border-t border-white/[0.07] pt-4 text-xs text-zinc-500">
                       <span className="h-1.5 w-1.5 rounded-full bg-teal-200" /> Desarrollo aplicado
                     </div>
                   </article>
@@ -436,7 +451,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="formacion" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <section id="formacion" className="mx-auto max-w-7xl scroll-mt-16 px-4 py-20 sm:px-6 sm:py-28 md:px-12">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <SectionHeading eyebrow="Formación" title="Una base para seguir creciendo." />
             <div className="relative border-l border-white/10 pl-7">
@@ -448,7 +463,7 @@ export default function Home() {
                     <span className="text-xs font-medium uppercase tracking-[0.12em]">Grado universitario</span>
                   </div>
                   <h3 className="mt-3 text-xl font-medium text-zinc-100">Grado en Ingeniería Informática</h3>
-                  <p className="mt-2 text-sm text-zinc-400">Universidad · 2022 — Presente</p>
+                  <p className="mt-2 text-justify text-sm text-zinc-400">Universidad · 2022 — Presente</p>
                 </div>
                 <span className="w-fit rounded-full border border-teal-200/15 bg-teal-200/[0.06] px-3 py-1.5 text-xs text-teal-100">
                   4º curso · fase final
@@ -458,15 +473,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contacto" className="mx-auto max-w-6xl scroll-mt-16 px-5 pb-20 sm:px-8 sm:pb-28 lg:px-10">
+        <section id="contacto" className="mx-auto max-w-7xl scroll-mt-16 px-4 pb-20 sm:px-6 sm:pb-28 md:px-12">
           <div className="contact-panel relative overflow-hidden rounded-[2rem] border border-white/10 px-6 py-12 text-center sm:px-12 sm:py-16">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(94,234,212,0.11),transparent_55%)]" />
             <div className="relative mx-auto max-w-2xl">
-              <p className="section-eyebrow">Contacto</p>
+              <p className="section-eyebrow text-justify">Contacto</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl">
                 ¿Buscáis a alguien con ganas de aportar?
               </h2>
-              <p className="mx-auto mt-4 max-w-xl leading-7 text-zinc-400">
+              <p className="mx-auto mt-4 max-w-xl text-justify leading-7 text-zinc-400">
                 Estoy buscando una empresa donde completar mis prácticas de fin de grado, afrontar retos reales y crecer junto a un buen equipo.
               </p>
               <a
@@ -482,8 +497,8 @@ export default function Home() {
         </section>
 
         <footer className="border-t border-white/[0.06]">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-6 text-xs text-zinc-600 sm:flex-row sm:px-8 lg:px-10">
-            <p>© 2026 Enrique García Sorribes</p>
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-zinc-600 sm:flex-row sm:px-6 md:px-12">
+            <p className="text-justify">© 2026 Enrique García Sorribes</p>
             
           </div>
         </footer>
